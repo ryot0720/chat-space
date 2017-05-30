@@ -1,18 +1,6 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
 * Database creation
-
 
 Users
 
@@ -23,11 +11,11 @@ Users
 | adress     | string      | null:false, unique:true        |
 | password   | string      | null:false                     |
 
-has_many :groups, through: :group_users
-has_many :group_users
+has_many :groups, through: :groups_users
+has_many :groups_users
 has_many :messages
 
-Group_Users
+Groups_Users
 
 | Column     | Type        | Options                         |
 |:-----------|------------:|:-------------------------------:|
@@ -38,16 +26,16 @@ Group_Users
 belongs_to :user
 belongs_to :group
 
-Gruops
+Groups
 
 | Column     | Type        | Options                         |
 |:-----------|------------:|:-------------------------------:|
 | id         | integer     | null:false                      |
 | name       | string      | null:false                      |
-| user_id    | references  | null:false, foreign_key :true   |
 
-has_many :users, through: through: :group_users
-has_many :group_users
+has_many :users, through: :groups_users
+has_many :groups_users
+has_many :messages
 
 
 Messages
@@ -63,17 +51,4 @@ Messages
 | group_id   | references  | null:false ,foreign_key :true   |
 
 belongs_to :users
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+belongs_to :group
