@@ -4,24 +4,21 @@
 
 Users
 
-| Column     | Type        | Options                        |
-|:-----------|------------:|:------------------------------:|
-| id         | integer     | null:false                     |
-| name       | string      | null:false, unique:true        |
-| adress     | string      | null:false, unique:true        |
-| password   | string      | null:false                     |
+| Column     | Type        | Options                               |
+|:-----------|------------:|:-------------------------------------:|
+| name       | string      | null:false, unique:true, add_index    |
 
+devise_for :users
 has_many :groups, through: :groups_users
 has_many :groups_users
 has_many :messages
 
 Groups_Users
 
-| Column     | Type        | Options                         |
-|:-----------|------------:|:-------------------------------:|
-| id         | integer     | null:false                      |
-| user_id    | integer     | null:false, foreign_key :true   |
-| group_id   | integer     | null:false, foreign_key :true   |
+| Column     | Type        | Options                                    |
+|:-----------|------------:|:------------------------------------------:|
+| user_id    | integer     | null:false, foreign_key :true, add_index   |
+| group_id   | integer     | null:false, foreign_key :true, add_index   |
 
 belongs_to :user
 belongs_to :group
@@ -40,15 +37,12 @@ has_many :messages
 
 Messages
 
-| Column     | Type        | Options                         |
-|:-----------|------------:|:-------------------------------:|
-| id         | integer     | null:false                      |
-| text       | text        |                                 |
-| image      | string      |                                 |
-| created_at | datetime    | null:false                      |
-| updated_at | datetime    | null:false                      |
-| user_id    | references  | null:false ,foreign_key :true   |
-| group_id   | references  | null:false ,foreign_key :true   |
+| Column     | Type        | Options                                     |
+|:-----------|------------:|:-------------------------------------------:|
+| text       | text        |                                             |
+| image      | string      |                                             |
+| user_id    | references  | null:false ,foreign_key :true, add_index    |
+| group_id   | references  | null:false ,foreign_key :true, add_index    |
 
-belongs_to :users
+belongs_to :user
 belongs_to :group
