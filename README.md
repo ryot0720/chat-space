@@ -12,37 +12,46 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+
+
 Users
+
 | Column     | Type        | Options                        |
 |:-----------|------------:|:------------------------------:|
 | id         | integer     | null:false                     |
 | name       | string      | null:false, unique:true        |
 | adress     | string      | null:false, unique:true        |
 | password   | string      | null:false                     |
+
 has_many :groups, through: :group_users
 has_many :group_users
 has_many :messages
 
 Group_Users
+
 | Column     | Type        | Options                         |
 |:-----------|------------:|:-------------------------------:|
 | id         | integer     | null:false                      |
 | user_id    | integer     | null:false, foreign_key :true   |
 | group_id   | integer     | null:false, foreign_key :true   |
+
 belongs_to :user
 belongs_to :group
 
 Gruops
+
 | Column     | Type        | Options                         |
 |:-----------|------------:|:-------------------------------:|
 | id         | integer     | null:false                      |
 | name       | string      | null:false                      |
 | user_id    | references  | null:false, foreign_key :true   |
+
 has_many :users, through: through: :group_users
 has_many :group_users
 
 
 Messages
+
 | Column     | Type        | Options                         |
 |:-----------|------------:|:-------------------------------:|
 | id         | integer     | null:false                      |
@@ -52,8 +61,8 @@ Messages
 | updated_at | datetime    | null:false                      |
 | user_id    | references  | null:false ,foreign_key :true   |
 | group_id   | references  | null:false ,foreign_key :true   |
-belongs_to :users
 
+belongs_to :users
 
 * Database initialization
 
