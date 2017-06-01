@@ -168,8 +168,15 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+<<<<<<< HEAD
   erb2haml
   font-awesome-rails
+=======
+<<<<<<< HEAD
+=======
+  erb2haml
+>>>>>>> origin/master
+>>>>>>> master
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
