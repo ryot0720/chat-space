@@ -45,9 +45,6 @@ group :development do
   gem 'spring'
 end
 
-<<<<<<< HEAD
-gem'haml-rails'
-=======
 gem 'haml-rails'
 gem 'erb2haml'
->>>>>>> origin/master
+gem 'font-awesome-rails'
