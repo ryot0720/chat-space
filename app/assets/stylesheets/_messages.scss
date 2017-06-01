@@ -1,0 +1,154 @@
+$attentionColor: #38AEF0;
+
+%html
+  %body{
+    height: 100%;
+    width:100%;
+  }
+    .header{
+      background-color: attentionColor;
+      text-align: center;
+      color: #FFFFFF;
+    }
+    .mainBox{
+      .sideBar{
+        float:left;
+        width: 300px;
+        height: 100vh;
+        .sideBarTop{
+          background-color: #253141;
+          color: #FFFFFF;
+          .userName{
+            font-size: 16px;
+            font-weight: bold;
+            height: 17%;
+            padding-left: 20px;
+            line-height: 106.5px;
+            display: inline-block;
+          }
+          .fa-cog{
+            float: right;
+            display: inline-block;
+            line-height: 106.5px;
+            padding-right: 20px;
+          }
+          .fa-pencil-square-o{
+            float: right;
+            display: inline-block;
+            line-height: 106.5px;
+            padding-right: 10px;
+          }
+        }
+        .sideBarPadding20{
+          background-color: #2f3e51;
+          height: 20px;
+          clear: both;
+        }
+        .chatHistory{
+          background-color: #2f3e51;
+          height: 83%;
+          padding-left: 20px;
+          .groupName{
+            font-size: 15px;
+            color: #FFFFFF;
+            padding-bottom: 5px;
+          }
+          .groupChatHistory{
+            font-size: 11px;
+            color: #FFFFFF;
+            padding-bottom: 40px;
+          }
+        }
+      }
+      .chatBox{
+        float: left;
+        width:calc(100vw - 300px);
+        height: 100vh;
+        background-color: #AAAAAA;
+
+
+        .chatBoxTop{
+          height: 14%;
+          border-bottom: solid 1px #eeeeee;
+          padding-left: 40px;
+          padding-right: 40px;
+          .editButton{
+            float: right;
+            margin-top: 28px;
+            height: 40px;
+            width: 60px;
+            border: solid 2px attentionColor;
+            color: attentionColor;
+            text-align: center;
+            line-height: 40px;
+          }
+
+          .groupName{
+            padding-top: 35px;
+            font-size: 20px;
+            color: #333333;
+          }
+          .groupMember{
+            padding-top: 15px;
+            font-size: 12px;
+            color: #999999;
+          }
+        }
+        .chatBoxPadding46{
+          height: 46px;
+        }
+        .chatBoxBody{
+          height: 71%;
+          padding-left: 40px;
+          padding-right: 40px;
+          .messageSender{
+            float: left;
+            font-size: 16px;
+            font-weight: bold;
+            color: #434A54;
+          }
+          .messageDatetime{
+            float: left;
+            padding-left: 10px;
+            font-size: 12px;
+            color: #999999;
+          }
+          .chatMessage{
+            clear:both;
+            padding-bottom: 40px;
+            font-size: 12px;
+            color: #434A54;
+          }
+        }
+        .chatBoxFooter{
+          height: 15%;
+          padding-left: 40px;
+          padding-right: 40px;
+          .typingBox{
+            float: left;
+            height: 50px;
+            font-size: 16px;
+            background-color: #FFFFFF;
+            color: #434A54;
+            margin-left: 10px;
+            padding-left: 10px;
+            width:900px;
+            line-height: 50px;
+              .fa-picture-o{
+                float: right;
+                line-height: 50px;
+                margin-right: 25px;
+              }
+          }
+          .sendMessageButton{
+            float: right;
+            height: 50px;
+            width:100px;
+            background-color: attentionColor;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 50px;
+          }
+        }
+      }
+    }
