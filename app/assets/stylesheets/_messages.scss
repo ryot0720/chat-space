@@ -1,12 +1,10 @@
-$attentionColor: #38AEF0;
-
 %html
   %body{
     height: 100%;
     width:100%;
   }
     .header{
-      background-color: attentionColor;
+      background-color: #38AEF0;
       text-align: center;
       color: #FFFFFF;
     }
@@ -15,10 +13,10 @@ $attentionColor: #38AEF0;
         float:left;
         width: 300px;
         height: 100vh;
-        .sideBarTop{
+        .sideBar__sideBarTop{
           background-color: #253141;
           color: #FFFFFF;
-          .userName{
+          .sideBar__sideBarTop__userName{
             font-size: 16px;
             font-weight: bold;
             height: 17%;
@@ -26,13 +24,13 @@ $attentionColor: #38AEF0;
             line-height: 106.5px;
             display: inline-block;
           }
-          .fa-cog{
+          .fa.fa-cog{
             float: right;
             display: inline-block;
             line-height: 106.5px;
             padding-right: 20px;
           }
-          .fa-pencil-square-o{
+          .fa.fa-pencil-square-o{
             float: right;
             display: inline-block;
             line-height: 106.5px;
@@ -48,12 +46,12 @@ $attentionColor: #38AEF0;
           background-color: #2f3e51;
           height: 83%;
           padding-left: 20px;
-          .groupName{
+          .chatHistory__groupName{
             font-size: 15px;
             color: #FFFFFF;
             padding-bottom: 5px;
           }
-          .groupChatHistory{
+          .chatHistory__groupChatHistory{
             font-size: 11px;
             color: #FFFFFF;
             padding-bottom: 40px;
@@ -72,23 +70,23 @@ $attentionColor: #38AEF0;
           border-bottom: solid 1px #eeeeee;
           padding-left: 40px;
           padding-right: 40px;
-          .editButton{
+          .chatBoxTop__editButton{
             float: right;
             margin-top: 28px;
             height: 40px;
             width: 60px;
-            border: solid 2px attentionColor;
-            color: attentionColor;
+            border: solid 2px #38AEF0;
+            color: #38AEF0;
             text-align: center;
             line-height: 40px;
           }
 
-          .groupName{
+          .chatBoxTop__groupName{
             padding-top: 35px;
             font-size: 20px;
             color: #333333;
           }
-          .groupMember{
+          .chatBoxTop__groupMember{
             padding-top: 15px;
             font-size: 12px;
             color: #999999;
@@ -101,19 +99,19 @@ $attentionColor: #38AEF0;
           height: 71%;
           padding-left: 40px;
           padding-right: 40px;
-          .messageSender{
+          .chatBoxBody__messageSender{
             float: left;
             font-size: 16px;
             font-weight: bold;
             color: #434A54;
           }
-          .messageDatetime{
+          .chatBoxBody__messageDatetime{
             float: left;
             padding-left: 10px;
             font-size: 12px;
             color: #999999;
           }
-          .chatMessage{
+          .chatBoxBody__chatMessage{
             clear:both;
             padding-bottom: 40px;
             font-size: 12px;
@@ -124,7 +122,7 @@ $attentionColor: #38AEF0;
           height: 15%;
           padding-left: 40px;
           padding-right: 40px;
-          .typingBox{
+          .chatBoxFooter__typingBox{
             float: left;
             height: 50px;
             font-size: 16px;
@@ -134,17 +132,17 @@ $attentionColor: #38AEF0;
             padding-left: 10px;
             width:900px;
             line-height: 50px;
-              .fa-picture-o{
+              .fa.fa-picture-o{
                 float: right;
                 line-height: 50px;
                 margin-right: 25px;
               }
           }
-          .sendMessageButton{
+          .chatBoxFooter__sendMessageButton{
             float: right;
             height: 50px;
             width:100px;
-            background-color: attentionColor;
+            background-color: #38AEF0;
             color: #FFFFFF;
             text-align: center;
             line-height: 50px;
