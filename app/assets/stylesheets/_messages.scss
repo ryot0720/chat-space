@@ -1,10 +1,12 @@
+$attentionColor: #38AEF0;
+
 %html
   %body{
     height: 100%;
     width:100%;
   }
     .header{
-      background-color: #38AEF0;
+      background-color: attentionColor;
       text-align: center;
       color: #FFFFFF;
     }
@@ -75,8 +77,8 @@
             margin-top: 28px;
             height: 40px;
             width: 60px;
-            border: solid 2px #38AEF0;
-            color: #38AEF0;
+            border: solid 2px attentionColor;
+            color: attentionColor;
             text-align: center;
             line-height: 40px;
           }
@@ -142,7 +144,7 @@
             float: right;
             height: 50px;
             width:100px;
-            background-color: #38AEF0;
+            background-color: attentionColor;
             color: #FFFFFF;
             text-align: center;
             line-height: 50px;
