@@ -1,0 +1,63 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :integrity => "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", :rel => "stylesheet"}/
+  %body
+    .header
+      チャットグループが作成されました。
+    .mainBox
+      .sideBar
+        .sideBar__sideBarTop
+          .sideBar__sideBarTop__userName
+            Ryo Tanaka
+          %i.sideBar__sideBarTop__fa.fa-cog{"aria-hidden" => "true"}
+          %i.sideBar__sideBarTop__fa.fa-pencil-square-o{"aria-hidden" => "true"}
+        .sideBarPadding20
+        .chatHistory
+          .chatHistory__groupName
+            Group6
+          .chatHistory__groupChatHistory
+            muuuu
+          .chatHistory__groupName
+            Group7
+          .chatHistory__groupChatHistory
+            aaaa
+          .chatHistory__groupName
+            Group8
+          .chatHistory__groupChatHistory
+            eeeeeeee
+      .chatBox
+        .chatBoxTop
+          .chatBoxTop__editButton
+            %p Edit
+          .chatBoxTop__groupName
+            Group6
+          .chatBoxTop__groupMember
+            Member: Ryotanaka,JiroYamada
+        .chatBoxPadding46
+        .chatBoxBody
+          .chatBoxBody__messageSender
+            Tarotanaka
+          .chatBoxBody__messageDatetime
+            2017/06/01 13:47
+          .chatBoxBody__chatMessage
+            頼むから表示されてくれ。
+          .chatBoxBody__messageSender
+            Jiro
+          .chatBoxBody__messageDatetime
+            2017/06/01 14:29
+          .chatBoxBody__chatMessage
+            頼む
+          .chatBoxBody__messageSender
+            Saburo
+          .chatBoxBody__messageDatetime
+            2017/06/01 15:47
+          .chatBoxBody__chatMessage
+            頼
+        .chatBoxFooter
+          .chatBoxFooter__typingBox
+            type a message
+            %i.chatBoxFooter__fa.fa-picture-o{"aria-hidden" => "true"}
+          .chatBoxFooter__sendMessageButton
+            %p Send
