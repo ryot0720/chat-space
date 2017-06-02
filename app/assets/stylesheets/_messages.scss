@@ -1,61 +1,59 @@
-$attentionColor: #38AEF0;
-
 %html
   %body{
     height: 100%;
     width:100%;
   }
     .header{
-      background-color: attentionColor;
+      background-color: $attentionColor;
       text-align: center;
-      color: #FFFFFF;
+      color: $whiteColor;
     }
     .mainBox{
       .sideBar{
         float:left;
         width: 300px;
-        height: 100vh;
-        .sideBarTop{
+        height: calc(100vh - 28px);
+        &Top{
           background-color: #253141;
-          color: #FFFFFF;
-          .userName{
+          color: $whiteColor;
+          height: 16%;
+          &__userName{
             font-size: 16px;
             font-weight: bold;
-            height: 17%;
             padding-left: 20px;
-            line-height: 106.5px;
+            line-height: 120px;
             display: inline-block;
           }
-          .fa-cog{
+          .fa.fa-cog{
             float: right;
             display: inline-block;
-            line-height: 106.5px;
+            line-height: 120px;
             padding-right: 20px;
           }
-          .fa-pencil-square-o{
+          .fa.fa-pencil-square-o{
             float: right;
             display: inline-block;
-            line-height: 106.5px;
+            line-height: 120px;
             padding-right: 10px;
           }
         }
-        .sideBarPadding20{
-          background-color: #2f3e51;
+        &SpaceArea{
+          background-color: $chatHistoryColor;
           height: 20px;
           clear: both;
         }
         .chatHistory{
-          background-color: #2f3e51;
-          height: 83%;
+          background-color: $chatHistoryColor;
+          height: calc(84% - 20px);
           padding-left: 20px;
-          .groupName{
+          &__groupName{
             font-size: 15px;
-            color: #FFFFFF;
+            color: $whiteColor;
             padding-bottom: 5px;
           }
-          .groupChatHistory{
+          &__groupChatHistory{
             font-size: 11px;
-            color: #FFFFFF;
+            color: $whiteColor;
             padding-bottom: 40px;
           }
         }
@@ -63,89 +61,89 @@ $attentionColor: #38AEF0;
       .chatBox{
         float: left;
         width:calc(100vw - 300px);
-        height: 100vh;
+        height:calc(100vh - 29px);
         background-color: #AAAAAA;
 
 
-        .chatBoxTop{
-          height: 14%;
+        &Top{
+          height: 16%;
           border-bottom: solid 1px #eeeeee;
           padding-left: 40px;
           padding-right: 40px;
-          .editButton{
+          &__editButton{
             float: right;
             margin-top: 28px;
             height: 40px;
             width: 60px;
-            border: solid 2px attentionColor;
-            color: attentionColor;
+            border: solid 2px $attentionColor;
+            color: $attentionColor;
             text-align: center;
             line-height: 40px;
           }
 
-          .groupName{
+          &__groupName{
             padding-top: 35px;
             font-size: 20px;
             color: #333333;
           }
-          .groupMember{
+          &__groupMember{
             padding-top: 15px;
             font-size: 12px;
-            color: #999999;
+            color: $grayColor;
           }
         }
-        .chatBoxPadding46{
+        &SpaceArea{
           height: 46px;
         }
-        .chatBoxBody{
-          height: 71%;
+        &Body{
+          height: 70%;
           padding-left: 40px;
           padding-right: 40px;
-          .messageSender{
+          &__messageSender{
             float: left;
             font-size: 16px;
             font-weight: bold;
-            color: #434A54;
+            color: messageColor;
           }
-          .messageDatetime{
+          &__messageDatetime{
             float: left;
             padding-left: 10px;
             font-size: 12px;
-            color: #999999;
+            color: $grayColor;
           }
-          .chatMessage{
+          &__chatMessage{
             clear:both;
             padding-bottom: 40px;
             font-size: 12px;
-            color: #434A54;
+            color: messageColor;
           }
         }
-        .chatBoxFooter{
-          height: 15%;
+        &Footer{
+          height: 14%;
           padding-left: 40px;
           padding-right: 40px;
-          .typingBox{
+          &__typingBox{
             float: left;
             height: 50px;
             font-size: 16px;
-            background-color: #FFFFFF;
-            color: #434A54;
+            background-color: $whiteColor;
+            color: messageColor;
             margin-left: 10px;
             padding-left: 10px;
             width:900px;
             line-height: 50px;
-              .fa-picture-o{
+              .fa.fa-picture-o{
                 float: right;
                 line-height: 50px;
                 margin-right: 25px;
               }
           }
-          .sendMessageButton{
+          &__sendMessageButton{
             float: right;
             height: 50px;
             width:100px;
-            background-color: attentionColor;
-            color: #FFFFFF;
+            background-color: $attentionColor;
+            color: $whiteColor;
             text-align: center;
             line-height: 50px;
           }
