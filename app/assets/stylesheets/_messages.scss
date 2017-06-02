@@ -1,6 +1,3 @@
-$attentionColor: #38AEF0;
-$whiteColor: #FFFFFF;
-
 %html
   %body{
     height: 100%;
@@ -15,39 +12,39 @@ $whiteColor: #FFFFFF;
       .sideBar{
         float:left;
         width: 300px;
-        height: calc(100vh - 17px);
+        height: calc(100vh - 28px);
         &Top{
           background-color: #253141;
           color: $whiteColor;
+          height: 16%;
           &__userName{
             font-size: 16px;
             font-weight: bold;
-            height: 17%;
             padding-left: 20px;
-            line-height: 106.5px;
+            line-height: 120px;
             display: inline-block;
           }
           .fa.fa-cog{
             float: right;
             display: inline-block;
-            line-height: 106.5px;
+            line-height: 120px;
             padding-right: 20px;
           }
           .fa.fa-pencil-square-o{
             float: right;
             display: inline-block;
-            line-height: 106.5px;
+            line-height: 120px;
             padding-right: 10px;
           }
         }
-        &Padding20{
-          background-color: #2f3e51;
+        &SpaceArea{
+          background-color: $chatHistoryColor;
           height: 20px;
           clear: both;
         }
         .chatHistory{
-          background-color: #2f3e51;
-          height: 83%;
+          background-color: $chatHistoryColor;
+          height: calc(84% - 20px);
           padding-left: 20px;
           &__groupName{
             font-size: 15px;
@@ -92,10 +89,10 @@ $whiteColor: #FFFFFF;
           &__groupMember{
             padding-top: 15px;
             font-size: 12px;
-            color: #999999;
+            color: $grayColor;
           }
         }
-        &Padding46{
+        &SpaceArea{
           height: 46px;
         }
         &Body{
@@ -106,19 +103,19 @@ $whiteColor: #FFFFFF;
             float: left;
             font-size: 16px;
             font-weight: bold;
-            color: #434A54;
+            color: messageColor;
           }
           &__messageDatetime{
             float: left;
             padding-left: 10px;
             font-size: 12px;
-            color: #999999;
+            color: $grayColor;
           }
           &__chatMessage{
             clear:both;
             padding-bottom: 40px;
             font-size: 12px;
-            color: #434A54;
+            color: messageColor;
           }
         }
         &Footer{
@@ -130,7 +127,7 @@ $whiteColor: #FFFFFF;
             height: 50px;
             font-size: 16px;
             background-color: $whiteColor;
-            color: #434A54;
+            color: messageColor;
             margin-left: 10px;
             padding-left: 10px;
             width:900px;
@@ -146,7 +143,7 @@ $whiteColor: #FFFFFF;
             height: 50px;
             width:100px;
             background-color: $attentionColor;
-            color: #FFFFFF;
+            color: $whiteColor;
             text-align: center;
             line-height: 50px;
           }
