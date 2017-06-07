@@ -4,8 +4,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-        flash[:notice] = "編集が完了しました！"
-        redirect_to :root
+        redirect_to :root, notice: "編集が完了しました！"
     else
         flash[:notice] = "編集に失敗しました"
         render :edit
