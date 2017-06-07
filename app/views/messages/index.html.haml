@@ -1,12 +1,14 @@
 .header
-  チャットグループが作成されました。
+  = h(flash[:notice])
 .mainBox
   .sideBar
     .sideBarTop
       .sideBarTop__userName
-        Ryo Tanaka
-      %i.fa.fa-cog{"aria-hidden" => "true"}
-      %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+        = current_user.name
+      = link_to edit_user_path(current_user) do
+        %i.fa.fa-cog{"aria-hidden" => "true"}
+      = link_to "" do
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
     .sideBarSpaceArea
     .chatHistory
       .chatHistory__groupName
