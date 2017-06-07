@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         redirect_to :root
     else
         flash[:notice] = "編集に失敗しました"
-        redirect_to action: :edit
+        render :edit
     end
   end
 
