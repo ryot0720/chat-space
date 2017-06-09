@@ -9,18 +9,11 @@
         %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
     .sideBarSpaceArea
     .chatHistory
-      .chatHistory__groupName
-        Group6
-      .chatHistory__groupChatHistory
-        muuuu
-      .chatHistory__groupName
-        Group7
-      .chatHistory__groupChatHistory
-        aaaa
-      .chatHistory__groupName
-        Group8
-      .chatHistory__groupChatHistory
-        eeeeeeee
+      - @groups.each do |group|
+        .chatHistory__groupName
+          = group.name
+        .chatHistory__groupChatHistory
+          任意
   .chatBox
     .chatBoxTop
       %a.chatBoxTop__editButton{:href => "/groups/:id/edit"}
