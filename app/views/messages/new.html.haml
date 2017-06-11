@@ -1,0 +1,26 @@
+= render "shared/shared"
+.chatBox
+  .chatBoxTop
+    %a.chatBoxTop__editButton{:href => "/groups/#{@group.id}/edit"} Edit
+    .chatBoxTop__groupName
+      = @group.name
+    .chatBoxTop__groupMember
+      - @group.users.each do |user|
+        = user.name
+  .chatBoxSpaceArea
+    .chatBoxBody
+      - @messages.each do |message|
+        .chatBoxBody__messageSender
+          = current_user.name
+        .chatBoxBody__messageDatetime
+          = message.created_at
+        .chatBoxBody__chatMessage
+          = message.text
+        .chatBoxBody__chatMessage
+          = message.avatar
+  .chatBoxFooter
+    = form_for ( [@group, @message] ) do |f|
+      = f.text_field :text, class: "chatBoxFooter__typingBox", placeholder: "type a message"
+      = f.label "avatar", { class: "fa fa-image" } do
+        = f.file_field :avatar, style: "display: none;"
+      = f.submit "Send", class: "chatBoxFooter__sendMessageButton"
