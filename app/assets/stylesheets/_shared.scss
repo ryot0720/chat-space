@@ -1,0 +1,60 @@
+.mainBox{
+  .sideBar{
+    float:left;
+    width: 300px;
+    min-height: 900px;
+    max-height: 900px;
+    overflow: auto;
+    &Top{
+      background-color: #253141;
+      color: $whiteColor;
+      height: 16%;
+      position: relative;
+      top:0;
+      left: 0;
+      width:300px;
+      &__userName{
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 20px;
+        line-height: 120px;
+        display: inline-block;
+      }
+      .fa.fa-cog{
+        float: right;
+        display: inline-block;
+        line-height: 120px;
+        padding-right: 20px;
+        color: $whiteColor;
+      }
+      .fa.fa-pencil-square-o{
+        float: right;
+        display: inline-block;
+        line-height: 120px;
+        padding-right: 10px;
+        color: $whiteColor;
+      }
+    }
+    &SpaceArea{
+      background-color: $chatHistoryColor;
+      height: 20px;
+      clear: both;
+    }
+    .chatHistory{
+      background-color: $chatHistoryColor;
+      height: calc(84% - 20px);
+      padding-left: 20px;
+      width: 300px;
+      &__groupName{
+        font-size: 15px;
+        color: $whiteColor;
+        padding-bottom: 5px;
+      }
+      &__groupChatHistory{
+        font-size: 11px;
+        color: $whiteColor;
+        padding-bottom: 40px;
+      }
+    }
+  }
+}

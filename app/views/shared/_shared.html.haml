@@ -1,0 +1,16 @@
+.mainBox
+  .sideBar
+    .sideBarTop
+      .sideBarTop__userName
+        = current_user.name
+      = link_to edit_user_path(current_user) do
+        %i.fa.fa-cog{"aria-hidden" => "true"}
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+    .sideBarSpaceArea
+    .chatHistory
+      - @groups.each do |group|
+        .chatHistory__groupName
+          = link_to group.name, new_group_message_path(group.id)
+        .chatHistory__groupChatHistory
+          / = group.messages.last.text
