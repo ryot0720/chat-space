@@ -2,4 +2,7 @@
   .chatHistory__groupName
     = link_to group.name, new_group_message_path(group.id)
   .chatHistory__groupChatHistory
-    = group.messages.last.text
+    -if group.messages.present?
+      = group.messages.last.text
+    -if group.messages.blank?
+      = "まだメッセージがありません"
