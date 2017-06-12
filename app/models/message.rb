@@ -3,4 +3,5 @@ class Message < ApplicationRecord
   belongs_to :group
   mount_uploader :avatar, AvatarUploader
   validates :text, presence: true
+  validates :avatar, presence: true
 end
