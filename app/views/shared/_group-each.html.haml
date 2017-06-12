@@ -4,5 +4,5 @@
   .chatHistory__groupChatHistory
     -if group.messages.present?
       = group.messages.last.text
-    -if group.messages.blank?
+    -else
       = "まだメッセージがありません"
