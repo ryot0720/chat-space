@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
       flash[:notice] = "メッセージが送信されました"
       redirect_to new_group_message_path
     else
-      flash[:alert] = " メッセージを入力してください"
+      flash.now[:alert] = " メッセージを入力してください"
       render :new
     end
   end
