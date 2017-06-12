@@ -1,7 +1,8 @@
 = render "shared/shared"
 .chatBox
   .chatBoxTop
-    %a.chatBoxTop__editButton{:href => "/groups/#{@group.id}/edit"} Edit
+    .chatBoxTop__editButton
+      = link_to 'Edit', edit_group_path(@group.id)
     .chatBoxTop__groupName
       = @group.name
     .chatBoxTop__groupMember
@@ -16,7 +17,7 @@
           = message.created_at
         .chatBoxBody__chatMessage
           = message.text
-        .chatBoxBody__chatMessage
+        .chatBoxBody__chatAvatar
           = message.avatar
   .chatBoxFooter
     = form_for ( [@group, @message] ) do |f|
