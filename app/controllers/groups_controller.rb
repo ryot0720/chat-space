@@ -12,8 +12,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
       if @group.save
-         flash[:notice] = "グループを作成しました"
-         redirect_to root_path
+         redirect_to :root, notice: "グループを作成しました"
       else
         session[:errors] = @group.errors.full_messages
         render :new
