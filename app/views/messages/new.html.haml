@@ -6,19 +6,10 @@
     .chatBoxTop__groupName
       = @group.name
     .chatBoxTop__groupMember
-      - @group.users.each do |user|
-        = user.name
+      = render "shared/member"
   .chatBoxSpaceArea
     .chatBoxBody
-      - @messages.each do |message|
-        .chatBoxBody__messageSender
-          = current_user.name
-        .chatBoxBody__messageDatetime
-          = message.created_at
-        .chatBoxBody__chatMessage
-          = message.text
-        .chatBoxBody__chatAvatar
-          = message.avatar
+      = render "shared/message"
   .chatBoxFooter
     = form_for ( [@group, @message] ) do |f|
       = f.text_field :text, class: "chatBoxFooter__typingBox", placeholder: "type a message"
