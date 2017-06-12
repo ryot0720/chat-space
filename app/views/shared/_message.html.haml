@@ -1,0 +1,9 @@
+- @messages.each do |message|
+  .chatBoxBody__messageSender
+    = current_user.name
+  .chatBoxBody__messageDatetime
+    = message.created_at
+  .chatBoxBody__chatMessage
+    = message.text
+  .chatBoxBody__chatAvatar
+    = message.avatar

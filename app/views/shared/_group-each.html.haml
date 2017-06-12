@@ -1,0 +1,4 @@
+- @groups.each do |group|
+  .chatHistory__groupName
+    = link_to group.name, new_group_message_path(group.id)
+  .chatHistory__groupChatHistory

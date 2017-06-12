@@ -12,8 +12,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
       if @group.save
-         flash[:notice] = "グループを作成しました"
-         redirect_to root_path
+         redirect_to :root, notice: "グループを作成しました"
       else
         session[:errors] = @group.errors.full_messages
         render :new
@@ -26,7 +25,7 @@ class GroupsController < ApplicationController
   def update
     if @group.update(group_params)
       flash[:notice] = "チャットグループが更新されました"
-      redirect_to root_path
+      redirect_to new_group_message_path(@group)
     else
       session[:errors] = @group.errors.full_messages
       render :edit
