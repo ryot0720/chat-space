@@ -38,6 +38,8 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+gem 'rails-i18n'
+gem 'pry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +48,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'rails-controller-testing'
 end
 
 group :development do
