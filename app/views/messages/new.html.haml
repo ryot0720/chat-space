@@ -8,11 +8,11 @@
     .chatBoxTop__groupMember
       = render "shared/member"
   .chatBoxSpaceArea
-    .chatBoxBody
-      = render "shared/message"
+  .chatBoxBody
+    = render "shared/message"
   .chatBoxFooter
-    = form_for ( [@group, @message] ) do |f|
-      = f.text_field :text, class: "chatBoxFooter__typingBox", placeholder: "type a message"
+    = form_for [@group, @message], html: { class: 'form js-form' } do |f|
+      = f.text_field :text, class: "chatBoxFooter__typingBox js-form__text-field", placeholder: "type a message"
       = f.label "avatar", { class: "fa fa-image" } do
         = f.file_field :avatar, style: "display: none;"
       = f.submit "Send", class: "chatBoxFooter__sendMessageButton"
