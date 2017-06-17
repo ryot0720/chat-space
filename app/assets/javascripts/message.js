@@ -1,14 +1,14 @@
 $(function() {
   function new_message(message){
 
-    var Avatar = '';
+    var avatar = '';
     if (message.avatar.url) {
-    Avatar = `<img src="${message.avatar.url}">`};
+    avatar = `<img src="${message.avatar.url}">`};
 
     var new_message = $('<div class = "chatBoxBody__messageSender">' + message.user_name + '</div>' +
                         '<div class = "chatBoxBody__messageDatetime">' + message.time + '</div>' +
                         '<div class = "chatBoxBody__chatMessage">' + message.text + '</div>' +
-                          '<div class = "chatBoxBody__chatAvatar">' + Avatar + '</div>'
+                          '<div class = "chatBoxBody__chatAvatar">' + avatar + '</div>'
                         );
 
     return new_message;
