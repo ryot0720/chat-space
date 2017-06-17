@@ -1,19 +1,19 @@
 $(function() {
   function new_message(message){
+
+    var Avatar = '';
+    if (message.avatar.url) {
+    Avatar = `<img src="${message.avatar.url}">`};
+
     var new_message = $('<div class = "chatBoxBody__messageSender">' + message.user_name + '</div>' +
                         '<div class = "chatBoxBody__messageDatetime">' + message.time + '</div>' +
                         '<div class = "chatBoxBody__chatMessage">' + message.text + '</div>' +
-                        '<div class = "chatBoxBody__chatAvatar">' + message.avatar + '</div>'
-                        // if(message.avatar) {
-                        //                   var image_tag = '<img src = "' + message.avatar + '">';
-                        //                   var image = '<div class = "chatBoxBody__chatAvatar">' + image_url +'</div>';
-                        // } else {
-                        //                   var image = '<div class = "chatBoxBody__chatAvatar">''</div>';
-                        // };
+                          '<div class = "chatBoxBody__chatAvatar">' + Avatar + '</div>'
                         );
+
     return new_message;
   }
-  // フォーム送信時に非同期通信を始めるというコールバックの定義
+
   $('.js-form').on('submit', function(e){
     e.preventDefault();
     // フォームに入力された値を取得する
