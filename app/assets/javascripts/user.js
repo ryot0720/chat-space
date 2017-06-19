@@ -21,8 +21,8 @@ $(function() {
 
   $('#user-search-field').on('keyup', function(e){
     e.preventDefault();
-    var input = $.trim($(this).val());
-
+    var text = $.trim($(this).val());
+    input = text.match("^[0-9a-zA-Z]+$")
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -38,18 +38,18 @@ $(function() {
         $('#user-search-result').append('<li>' + list_group_member(user) + '</li>')
       });
     })
+
     .fail(function(user) {
       alert('ユーザー検索に失敗しました');
     });
   });
-  // メンバーの追加
-  $(document).on("click", ".chat-group-user__btn--add", (function(){
+      // メンバーの追加
+  $(document).on("click", ".chat-group-user__btn--add", function(){
     var id = $(this).attr("data-user-id");
     var name = $(this).attr("data-user-name");
     $('#chat-group-users').append('<li>' + add_group_member(id, name) + '</li>')
     $(this).parent().remove();
-    })
-  );
+  });
   // メンバーの削除
   $("#chat-group-users").on("click", ".chat-group-user__btn--remove", function(){
     $(this).parent().remove();
