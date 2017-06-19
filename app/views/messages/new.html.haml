@@ -8,7 +8,7 @@
     .chatBoxTop__groupMember
       = render "shared/member"
   .chatBoxSpaceArea
-  .chatBoxBody
+  .chatBoxBody{ id: 'message_id' }
     = render "shared/message"
   .chatBoxFooter
     = form_for [@group, @message], html: { class: 'form js-form' } do |f|

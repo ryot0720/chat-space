@@ -1,4 +1,5 @@
 $(function() {
+
   function new_message(message){
 
     var avatar = '';
@@ -16,21 +17,17 @@ $(function() {
 
   $('.js-form').on('submit', function(e){
     e.preventDefault();
-    // フォームに入力された値を取得する
+
     var url = $(this)[0].action;
     var formdata = new FormData(this);
-    // 非同期通信に必要なオプションの設定
+
     $.ajax({
-      // リクエスト送信先のURL
       url: url,
-      // HTTP通信の種類
       type: 'POST',
-      // サーバに送る値の各種設定
       data: formdata,
       dataType: 'json',
       contentType: false,
       processData: false,
-      // サーバから帰ってくるデータの方の設定
     })
 
     .done(function(message) {
@@ -45,4 +42,30 @@ $(function() {
       alert('メッセージを入力してください');
     });
   });
+
+  //   setInterval(function () {
+  //     $.ajax({
+  //       type: 'GET',
+  //       url: location.href,
+  //       data: {
+  //         message: { id: message_id }
+  //       },
+  //       dataType: 'json'
+  //     })
+  //     .done(function (json) {
+  //       var insertHTML = '';
+  //       json.messages.forEach(function (message) {
+  //         if (message.id > id ) {
+  //           insertHTML += new_message(message);
+  //         }
+  //       });
+  //       $('.chatBoxBody').html(insertHTML);
+  //     })
+  //     .fail(function (message) {
+  //       alert('自動更新に失敗しました');
+  //     });
+  //   } else {
+  //     clearInterval)interval
+  //   } , 5000 );
+  // });
 });

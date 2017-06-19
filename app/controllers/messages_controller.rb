@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
