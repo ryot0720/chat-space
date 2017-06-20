@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
@@ -20,13 +24,14 @@ class MessagesController < ApplicationController
   end
 
   private
-  def get_group
-    @messages = Group.find(params[:group_id]).messages
-    @groups = current_user.groups.includes(:messages)
-    @group = Group.find(params[:group_id])
-  end
-
   def message_params
     params.require(:message).permit(:text, :avatar).merge(user_id: current_user.id)
   end
+
+  def get_group
+    @groups = current_user.groups.includes(:messages)
+    @group = Group.find(params[:group_id])
+    @messages = @group.messages.includes(:user)
+  end
+
 end

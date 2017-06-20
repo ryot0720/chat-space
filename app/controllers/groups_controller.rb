@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
       if @group.save
-         redirect_to :root, notice: "グループを作成しました"
+         redirect_to root_path(@group.id), notice: "グループを作成しました"
       else
         session[:errors] = @group.errors.full_messages
         render :new
@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, { user_ids:[] })
+    params.require(:group).permit(:name, user_ids:[])
   end
 
   def edit_group
