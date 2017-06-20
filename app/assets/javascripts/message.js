@@ -16,21 +16,17 @@ $(function() {
 
   $('.js-form').on('submit', function(e){
     e.preventDefault();
-    // フォームに入力された値を取得する
+
     var url = $(this)[0].action;
     var formdata = new FormData(this);
-    // 非同期通信に必要なオプションの設定
+
     $.ajax({
-      // リクエスト送信先のURL
       url: url,
-      // HTTP通信の種類
       type: 'POST',
-      // サーバに送る値の各種設定
       data: formdata,
       dataType: 'json',
       contentType: false,
       processData: false,
-      // サーバから帰ってくるデータの方の設定
     })
 
     .done(function(message) {
@@ -45,4 +41,21 @@ $(function() {
       alert('メッセージを入力してください');
     });
   });
+
+  setInterval(function() {
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+      })
+      .done(function(json) {
+        $('.chatBoxBody').empty();
+        json.messages.forEach(function(i, single){
+          var html = new_message(single);
+          $('.chatBoxBody').append(html);
+        });
+      })
+    } , 5000);
 });
